@@ -72,6 +72,20 @@ class Product
     puts "Amount: #{amount}"
     puts "Percentage: #{percentage}"
   end
+
+  
+  # ? and !
+  def in_stock?
+    stock>0
+  end
+
+  def apply_discount!(amount)
+    @price-=amount
+  end
+
+  def price!
+    price
+  end
 end
 
 # keyboard=Product.new("Mechanical Keyboard",15_000,5)
@@ -89,15 +103,26 @@ end
 # puts keyboard.sell(2)
 # puts keyboard.stock
 
-gaming_keyboard=Product.new("Gaming Keyboard",20_000,5)
-puts gaming_keyboard.sell
-puts gaming_keyboard.sell(2)
-puts gaming_keyboard.stock
+# gaming_keyboard=Product.new("Gaming Keyboard",20_000,5)
+# puts gaming_keyboard.sell
+# puts gaming_keyboard.sell(2)
+# puts gaming_keyboard.stock
 
-gaming_keyboard.discount(percentage: true,amount:1000)
+# gaming_keyboard.discount(percentage: true,amount:1000)
 
-keyboard.discount(amount: 500)
+# keyboard.discount(amount: 500)
 
-keyboard.discount(amount: 10, percentage: true)
+# keyboard.discount(amount: 10, percentage: true)
 
-keyboard.discount(500)
+# keyboard.discount(500)
+
+
+#ruby ? and ! method conventions
+
+keyboard=Product.new("Mechanical Keyboard",15_000,5)
+
+keyboard.apply_discount!(2_000)
+puts keyboard.in_stock?
+
+puts keyboard.price!
+puts keyboard.price
