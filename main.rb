@@ -61,15 +61,43 @@ class Product
   def self.class_context
     self
   end
+
+  def sell(quantity=1)
+    @stock-=quantity
+    @stock
+  end
+
+  #keyword arguments
+  def discount(amount:,percentage:false)
+    puts "Amount: #{amount}"
+    puts "Percentage: #{percentage}"
+  end
 end
 
-keyboard=Product.new("Mechanical Keyboard",15_000,5)
-puts keyboard.description
-puts keyboard.who_am_i == keyboard
-puts keyboard.show_self
+# keyboard=Product.new("Mechanical Keyboard",15_000,5)
+# puts keyboard.description
+# puts keyboard.who_am_i == keyboard
+# puts keyboard.show_self
 
-puts Product.category
-#puts keyboard.category
+# puts Product.category
+# #puts keyboard.category
 
-puts keyboard.instance_context == keyboard
-puts Product.class_context == Product
+# puts keyboard.instance_context == keyboard
+# puts Product.class_context == Product
+
+
+# puts keyboard.sell(2)
+# puts keyboard.stock
+
+gaming_keyboard=Product.new("Gaming Keyboard",20_000,5)
+puts gaming_keyboard.sell
+puts gaming_keyboard.sell(2)
+puts gaming_keyboard.stock
+
+gaming_keyboard.discount(percentage: true,amount:1000)
+
+keyboard.discount(amount: 500)
+
+keyboard.discount(amount: 10, percentage: true)
+
+keyboard.discount(500)
