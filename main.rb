@@ -28,7 +28,7 @@
 # keyboard.stock-=500
 
 class Product
-  puts self
+  #puts self
   attr_reader :name,:price,:stock
 
   def initialize(name,price,stock)
@@ -119,10 +119,22 @@ end
 
 #ruby ? and ! method conventions
 
-keyboard=Product.new("Mechanical Keyboard",15_000,5)
+# keyboard=Product.new("Mechanical Keyboard",15_000,5)
 
-keyboard.apply_discount!(2_000)
-puts keyboard.in_stock?
+# keyboard.apply_discount!(2_000)
+# puts keyboard.in_stock?
 
-puts keyboard.price!
-puts keyboard.price
+# puts keyboard.price!
+# puts keyboard.price
+
+# keyboard=Product.new("Gaming Keyboard",20_000,6)
+
+# p keyboard
+
+a="hello"
+b="hello"
+
+p a==b
+p a.object_id==b.object_id
+
+p :name.object_id==:name.object_id
